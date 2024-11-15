@@ -1,0 +1,40 @@
+datasource db {
+    provider = "mysql"
+    url      = env("DATABASE_URL")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model Product {
+    id                 Int           @id @default(autoincrement())
+    name               String
+    category           String
+    quantity_available Int
+    purchase_price     Float
+    description        String
+    createdAt          DateTime      @default(now())
+    manufacturer       String
+    product_sold       ProductSold[]
+    all_time_quantity  Int           @default(0)
+}
+
+model Sale {
+    id           Int           @id @default(autoincrement())
+    total_price  Float
+    createdAt    DateTime      @default(now())
+    product_sold ProductSold[]
+    discount     Float         @default(0)
+}
+
+model ProductSold {
+    id            Int      @id @default(autoincrement())
+    product_id    Int
+    quantity_sold Int
+    sale_price    Float
+    sales_id      Int
+    createdAt     DateTime @default(now())
+    product       Product  @relation(fields: [product_id], references: [id], onDelete: Cascade)
+    sales         Sale     @relation(fields: [sales_id], references: [id], onDelete: Cascade)
+}
