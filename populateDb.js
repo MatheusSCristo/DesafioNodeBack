@@ -16,7 +16,6 @@ async function populateProducts()  {
         purchase_price: parseFloat(faker.commerce.price(5, 500, 2)),
         description: faker.commerce.productDescription(),
         manufacturer: faker.company.name(),
-        min_quantity_threshold: faker.number.int({ min: 1, max: 10 }),
         createdAt: faker.date.recent({ years: 3 }),
         all_time_quantity: quantity,
       },
