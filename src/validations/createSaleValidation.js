@@ -3,6 +3,7 @@ const createSaleValidation=(sale)=>{
         return {error:'É necessário informar ao menos um produto para cadastrar a venda'}
     }
     for(let product of sale.product_sold){
+        
         if(!product.product_id || !product.quantity_sold || !product.unit_price){
             return {error:'É necessário informar o id do produto, a quantidade vendida e o preço unitário para cada produto vendido'}
         }
