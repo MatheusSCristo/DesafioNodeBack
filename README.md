@@ -1,6 +1,6 @@
 # Desafio Técnico - Sistema de Gestão de Vendas e Produtos
 
-Este é um projeto de backend para um desafio Técnico, que gerencia vendas e produtos de uma loja fictícia de eletrônicos. O sistema inclui funcionalidades como o gerenciamento de produtos, registro de vendas e controle de estoque, utilizando **Node.js** com **Prisma** e **MySQL**.
+Este é um projeto de backend para um desafio Técnico, que gerencia vendas e produtos de uma loja fictícia . O sistema inclui funcionalidades como o gerenciamento de produtos, registro de vendas e controle de estoque, utilizando **Node.js** com **Prisma** e **MySQL**.
 
 ## Requisitos
 
